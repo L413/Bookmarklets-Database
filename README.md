@@ -14,7 +14,9 @@ Just some other things I found/made.
 
 ### Piano
 Not made by me but its literally just an on screen piano.
-
+```javascript
+javascript:(function(){var el=document.createElement('script');el.src='https://L413.github.io/Bookmarklets-Database/piano.js';document.body.appendChild(el);})();
+```
 ### Unblock Any Youtube Video
 Watch any blocked youtube video by redirecting you to a nocookie youtube site.
 ```javascript
