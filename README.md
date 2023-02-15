@@ -14,7 +14,7 @@ Just some other things I found/made.
 
 ### Piano
 Not made by me but its literally just an on screen piano.
-Since it is too long of a script you have to copy it from here https://github.io/L413/Bookmarklets-Database/piano.js
+Since it is too long of a script you have to copy it from here [piano.js](https://github.com/L413/Bookmarklets-Database/blob/main/piano.js)
 ### Unblock Any Youtube Video
 Watch any blocked youtube video by redirecting you to a nocookie youtube site.
 ```javascript
