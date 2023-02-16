@@ -27,7 +27,7 @@ Just farms quizlet astroids not really that helpful.
 ```javascript
 javascript:(function()%7B(function() %7Blet x %3D document.createElement("script")%3Bx.src %3D "https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2FSnowLord7%2Fquizlet%40master%2Findex.js"%3Bx.onload %3D function () %7B x.remove()%3B %7D%3Bdocument.body.appendChild(x)%3B%7D)()%7D)()
 ```
-### Ed-Puzzle Answer Giver
+### Ed-Puzzle Hack Menu
 I havent tested this but I hope it works. If it doesn't I will take it off.
 ```javascript
 javascript: if (window.location.hostname == "edpuzzle.com") {var r = new XMLHttpRequest(); r.open("GET", "https://cdn.jsdelivr.net/gh/ading2210/edpuzzle-answers@latest/script.js", true); r.addEventListener("load", function(){eval(this.responseText);}); r.send();} else {alert("Please run this on https://edpuzzle.com/assignments/[assignment_id]/watch")}
