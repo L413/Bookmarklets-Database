@@ -1,6 +1,7 @@
 # Bookmarklets-Database
 A database for many useful and fun bookmarklets.
-DISCLAIMER: NONE OF THESE ARE MADE BY ME! They may be modifies by me but none are made by me.
+<br>
+DISCLAIMER: NONE OF THESE ARE MADE BY ME! Some are modified by me but none are made by me. I am working on some now.
 ## Developer Console
 This allows you to edit and view anything on a web page as well as including games that run over the web page to go undetected.
 ```javascript
@@ -21,6 +22,22 @@ This can give you any score on an I-Ready lesson and lesson only. It doesnt work
 ```javascript
 javascript:fetch('https://raw.githubusercontent.com/notplu/Nullify/main/Data/main.js').then(r => r.text()).then(r => eval(r))
 ```
+### Quizlet Hacks (Astroids)
+Just farms quizlet astroids not really that helpful.
+```javascript
+javascript:(function()%7B(function() %7Blet x %3D document.createElement("script")%3Bx.src %3D "https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2FSnowLord7%2Fquizlet%40master%2Findex.js"%3Bx.onload %3D function () %7B x.remove()%3B %7D%3Bdocument.body.appendChild(x)%3B%7D)()%7D)()
+```
+### Ed-Puzzle Video Skip
+Skips the edpuzzle video because I said so.
+```javascript
+javascript:function httpGet(url, callback, headers=[], method="GET", content=null) {  var request = new XMLHttpRequest();  request.addEventListener("load", callback);  request.open(method, url, true);  if (headers.length > 0) {    for (const header of headers) {      request.setRequestHeader(header[0], header[1]);    }  }  request.send(content);}function init() {  getCSRF();}function getCSRF() {  var csrfURL = "https://edpuzzle.com/api/v3/csrf";  httpGet(csrfURL, function(){    var data = JSON.parse(this.responseText);    var csrf = data.CSRFToken;    getAssignment(csrf);  });}function getAssignment(csrf) {  var assignment_id = window.location.href.split("/")[4];  var url1 = "https://edpuzzle.com/api/v3/assignments/" + assignment_id + "/attempt";  httpGet(url1, function(){    var data = JSON.parse(this.responseText);    postAttempt(csrf, data);  });}function postAttempt(csrf, data) {  var id = data._id;  var teacher_assignment_id = data.teacherAssignmentId;  var referrer = "https://edpuzzle.com/assignments/"+ teacher_assignment_id +"/watch";;  var url2 = "https://edpuzzle.com/api/v4/media_attempts/" + id + "/watch";  var content = {"timeIntervalNumber": 10};  var headers = [    ['accept', 'application/json, text/plain, */*'],    ['accept_language', 'en-US,en;q=0.9'],    ['content-type', 'application/json'],    ['x-csrf-token', csrf],    ['x-edpuzzle-referrer', referrer],    ['x-edpuzzle-web-version', window.__EDPUZZLE_DATA__.version]  ];    httpGet(url2, function(){    window.location.reload();  }, headers, "POST", JSON.stringify(content));}init();
+```
+### Ed-Puzzle Answer Giver
+I havent tested this but I hope it works. If it doesn't I will take it off.
+```javascript
+javascript: if (window.location.hostname == "edpuzzle.com") {var r = new XMLHttpRequest(); r.open("GET", "https://cdn.jsdelivr.net/gh/ading2210/edpuzzle-answers@latest/script.js", true); r.addEventListener("load", function(){eval(this.responseText);}); r.send();} else {alert("Please run this on https://edpuzzle.com/assignments/[assignment_id]/watch")}
+```
+
 ## Other
 Just some other things I found/made.
 
